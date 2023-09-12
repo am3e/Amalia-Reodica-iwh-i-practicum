@@ -1,0 +1,22 @@
+//- ** This is a sample of a pug template and how it uses the data passed to it from index.js.
+
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Add a New Clue! 
+
+        form(action="/update", method="POST")
+            label(for="clue_name") Name:
+            input(type="text", id="clue_name", name="clue_name", placeholder="Enter the name of the clue", required)
+            
+            label(for="location") Location of Clue:
+            input(type="number", id="location", name="location", placeholder="Tim's Room", required)
+
+            label(for="clue_description") Clue Description:
+            input(type="text", id="clue_description", name="clue_description", placeholder="Add a description", required)
+
+            button(type="submit") Submit
