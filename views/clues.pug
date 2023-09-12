@@ -8,6 +8,8 @@ html
         link(rel="stylesheet", href="/css/style.css")
     body    
         h1 Only Murders In the Building Clues
+        h3
+            a(class={active: currentUrl === '/updates'} href='/updates') Add/Update this table
         .cards 
             each clue in data
                 .card 

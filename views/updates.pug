@@ -7,7 +7,9 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet", href="/css/style.css")
     body    
-        h1 Add a New Clue! 
+        h1 Add a New Clue!
+        h3
+            a(class={active: currentUrl === '/'} href='/') Return to the homepage
 
         form(action="/update", method="POST")
             label(for="clue_name") Name:
