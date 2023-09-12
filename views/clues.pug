@@ -7,9 +7,10 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet", href="/css/style.css")
     body    
-        h1 title
-        //.cards 
-//-             each contact in data
-//-                 .card 
-//-                     h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-//-                     p.card__email #{contact.properties.email}
+        h1 Only Murders In the Building Clues
+        .cards 
+            each clue in data
+                .card 
+                    h2.card__name #{clue.properties.clue_name}  
+                    h3.card__location Located: #{clue.properties.location}
+                    p.card__description #{clue.properties.clue_description}

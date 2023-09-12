@@ -17,15 +17,15 @@ const cobjID = "2-18518517"
 
 // * Code for Route 1 goes here
 app.get('/', async (req, res) => {
-    //const contacts = 'https://api.hubspot.com/crm/v3/objects/contacts';
-    // const headers = {
-    //     Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
-    //     'Content-Type': 'application/json'
-    // }
+    const cobj = `https://api.hubapi.com/crm/v3/objects/${cobjID}?properties=clue_name&properties=location&properties=clue_description&limit=50`;
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    }
     try {
-        //const resp = await axios.get(contacts, { headers });
-        //const data = resp.data.results;
-        res.render('clues', { title: 'Clues | HubSpot APIs' });      
+        const resp = await axios.get(cobj, { headers });
+        const data = resp.data.results;
+        res.render('clues', { title: 'Clues | HubSpot APIs', data });      
     } catch (error) {
         console.error(error);
     }
